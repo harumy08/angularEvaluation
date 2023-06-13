@@ -1,0 +1,104 @@
+@media (min-width: 356px)
+  .card-columns
+    column-count: 6
+
+@media (min-width: 576px)
+  .card-columns
+    column-count: 6
+
+@media (min-width: 768px)
+  .card-columns
+    column-count: 6
+
+@media (min-width: 992px)
+  .card-columns
+    column-count: 4
+
+@media (min-width: 1200px)
+  .card-columns
+    column-count: 6
+
+.card-columns .card
+    margin-bottom: 1.25rem
+    background: black
+
+.card
+    border: 0
+    border-radius: 0
+
+.card-body
+    padding: 0
+    cursor: pointer
+
+.card-hover .reveal
+    visibility: hidden
+    opacity: 0
+    height: 0
+    padding: 0
+    position: absolute
+    top: 0
+    width: 100%
+    background-color: black
+    color: white
+
+.card-hover
+    &:hover .reveal
+      height: auto
+      visibility: visible
+      opacity: 0.7
+      transition: opacity 1s ease
+      position: absolute
+      top: 0
+      background-color: black
+      color: white
+
+.card-hover img
+    transition: filter .5s ease-in-out
+    -webkit-filter: grayscale(0%)
+    filter: grayscale(0%)
+
+    &:hover img
+      -webkit-filter: grayscale(100%)
+      filter: grayscale(100%)
+
+.reveal p
+    line-height: 125%
+    font-size: 1.5rem
+    text-align: center
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-image
+  cursor: pointer
+  position: relative
+  overflow: hidden
+
+  &:hover
+    border: 2px solid #ffffff
+
+.card-text
+  width: 100%
+  height: 100%
+  margin-top: -300px
+  position: absolute
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  color: #ffffff
+  background: rgba(0, 0, 0, 0.3)
+  transition: all 0.5s
+
+.card-image:hover .card-text
+  margin-top: 0
+  transition: all 0.5s
