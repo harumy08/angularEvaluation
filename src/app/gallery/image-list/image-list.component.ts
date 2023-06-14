@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, AfterViewChecked } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Image } from 'src/app/models/image.model';
 import { ImageModalComponent } from '../image-modal/image-modal.component';
@@ -12,9 +12,11 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './image-list.component.html',
   styleUrls: ['./image-list.component.sass']
 })
-export class ImageListComponent  implements OnInit {
+export class ImageListComponent  {
 
-  @Input() images: Image;
+  @Input() images: Image; //images que recibo de componente padre
+
+  //Parametros que recibo del paginado
 
   @Input() private page: number;
 
@@ -36,25 +38,7 @@ export class ImageListComponent  implements OnInit {
   ) {
   }
 
-  ngOnInit() {
-
-
-  }
-
-  ngAfterView() {
-
-  }
-
-  /*fillStudents(page : number) : void {
-    var keys = Object.keys(this.images)
-    if(Object.keys(this.images).length != 0){
-      this.showPagination = false;
-     }   setTimeout(() => {
-      /** spinner ends after 5 seconds
-      this.spinner.hide();
-  }, 5000
-  }*/
-
+  //funciones para paginacion
   siguiente(){
 
     this.page++;
@@ -78,12 +62,13 @@ export class ImageListComponent  implements OnInit {
   }
 
 
-
+//Funcion que me permite recivir la imagen subida del componente hijo, por un evento
 
   receiveImage($event) {
     this.previews = $event;
   }
 
+  //Funcion donde invoco al modal y envio la data del objeto
   openModal(item: any): void {
     this.dialog.open(ImageModalComponent, {
       data : item,

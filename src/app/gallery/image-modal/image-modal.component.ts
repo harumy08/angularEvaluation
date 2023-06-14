@@ -1,7 +1,6 @@
+//En este componente recibo la data de la imagen seleccionada
 import { Component, OnInit, Inject } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Image } from 'src/app/models/image.model';
-import { ImagesService } from '../../core/service/images.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -11,20 +10,15 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ImageModalComponent implements OnInit {
 
-  public image: Image;
-  private subscription: Subscription;
+  public image: Image; //Imagen
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Image
+    @Inject(MAT_DIALOG_DATA) public data: Image//data de mi imagen que viene del componente image-list
   ) {
 
   }
 
   ngOnInit(): void {
-  }
-
-  changeImg(move: number): void {
-    const position = this.data.id + move;
   }
 
 

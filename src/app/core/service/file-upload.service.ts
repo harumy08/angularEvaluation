@@ -10,7 +10,7 @@ export class FileUploadService {
 
   constructor(private http: HttpClient) {}
 
-  upload(file: File): Observable<HttpEvent<any>> {
+  upload(file: File): Observable<HttpEvent<any>> {//Funcion que sube img a servidor
     const formData: FormData = new FormData();
 
     formData.append('file', file);
@@ -23,7 +23,7 @@ export class FileUploadService {
     return this.http.request(req);
   }
 
-  getFiles(): Observable<any> {
+  getFiles(): Observable<any> {//Observable que me entrega lista de imagenes
     return this.http.get(`${this.baseUrl}/files`);
   }
 }

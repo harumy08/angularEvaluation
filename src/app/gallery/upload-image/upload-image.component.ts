@@ -1,6 +1,8 @@
+//Componente que me ayuda a subir mis imagenes
+
 import { Component, Output, EventEmitter } from '@angular/core';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
-import { FileUploadService } from 'src/app/core/service/file-upload.service';
+import { FileUploadService } from 'src/app/core/service/file-upload.service';//Servicio que se creo para subir imagenes, en caso que exista un api
 
 import {MatDialog} from '@angular/material/dialog';
 
@@ -14,16 +16,16 @@ export class UploadImageComponent {
   selectedFiles?: FileList;
   selectedFileNames: string[] = [];
 
-  progressInfos: any[] = [];
-  message: string[] = [];
+  progressInfos: any[] = [];// progreso de la subida
+  message: string[] = [];// Mensajes de exito
 
-  previews: string[] = [];
+  previews: string[] = [];//Preview de la imagen subida
 
-  @Output() imageEvent = new EventEmitter<any>();
+  @Output() imageEvent = new EventEmitter<any>();//por medio de un evento, envio el valor a su componente padre
 
   constructor(private uploadService: FileUploadService) {}
 
-  selectFiles(event: any): void {
+  selectFiles(event: any): void {//Funcion que se encarga de subir la imagen al servicio y darme un mensaje de error o exito
     this.message = [];
     this.progressInfos = [];
     this.selectedFileNames = [];
@@ -47,7 +49,7 @@ export class UploadImageComponent {
     }
   }
 
-  uploadFiles(): void {
+  uploadFiles(): void {//handle por el cual llamo a la funcion que sube la imagen y me muestra preview
     this.message = [];
 
     if (this.selectedFiles) {

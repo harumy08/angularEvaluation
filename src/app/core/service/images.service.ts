@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Image  } from "../../models/image.model";
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -16,13 +16,8 @@ export class ImagesService {
 
   constructor(private http: HttpClient) { }
 
-  getImages(page): Observable<Image>{
+  getImages(page): Observable<Image>{//Observable que me entrega lista de imagenes
     return this.http.get<Image>(this.RestUrl);
-  }
-
-  selectImage(id: number): void {
-    console.log('id',id);
-    this.idImage = id;
   }
 
 }

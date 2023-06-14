@@ -11,3 +11,5 @@ export class LazyImgDirective {
     }
   }
 }
+
+//directiva creada para carga perezosa de imagenes
