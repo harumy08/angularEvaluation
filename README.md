@@ -26,6 +26,8 @@ ng serve
 
 5. Navigate to `http://localhost:4200/`
 
+*Se realizo en Angular 11, debido que así aparecia en el requerimiento y se consulto con la reclutadora, que corraboro está información.
+
 
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
