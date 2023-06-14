@@ -9,13 +9,18 @@ import { RenderComponent } from './render/render.component';
 import {MaterialModule} from './material.module';
 import { ImageModalComponent } from './image-modal/image-modal.component';
 
+import { LazyImgDirective } from '../directives/LazyImgDirective';
+import { UploadImageComponent } from './upload-image/upload-image.component';
+
 
 @NgModule({
   declarations: [
     GalleryComponent,
     ImageListComponent,
     RenderComponent,
-    ImageModalComponent
+    ImageModalComponent,
+    LazyImgDirective,
+    UploadImageComponent
   ],
   imports: [
     CommonModule,

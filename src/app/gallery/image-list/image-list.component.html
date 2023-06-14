@@ -1,7 +1,26 @@
+<div class="row justify-content-end">
+  <div class="col-md-6 m-3">
+    <app-upload-image (imageEvent)="receiveImage($event)"></app-upload-image>
+  </div>
+</div>
+
 <div class="card-columns">
-  <div class="card card-hover h-100" *ngFor="let item of images">
+  <div class="card card-hover h-100" *ngFor="let preview of previews">
+    <div class="card-body">
+      <img appLazyimg class="card-img-top"
+        [src]="preview"
+        loading="lazy">
+        <div class="reveal h-100 p-2 d-flex">
+          <div class="w-100 align-self-center">
+            <p>Preview</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="card card-hover h-100" *ngFor="let item of images| async">
     <div class="card-body" (click)="openModal(item)">
-      <img class="card-img-top"
+      <img appLazyimg class="card-img-top"
         [src]="item.image"
         alt="{{item.name}}"
         loading="lazy">
