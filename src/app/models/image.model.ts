@@ -7,22 +7,16 @@ export interface Image {
   homeworld: string;
   wiki: string;
   image: string;
+  born: number;
   died: number;
   diedLocation: string;
   species: string;
   hairColor: string;
   eyeColor: string;
   skinColor: string;
+  era: [];
   affiliations: [];
   masters: [];
   apprentices: [];
   formerAffiliations: [];
-}
-
-export interface GalleryImage {
-  src: string;
-  position: number;
-  alt: string;
-  first: boolean;
-  last: boolean;
 }

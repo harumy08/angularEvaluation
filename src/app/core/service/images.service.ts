@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Image,GalleryImage } from "../../models/image.model";
+import { Image  } from "../../models/image.model";
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -10,12 +10,19 @@ export class ImagesService {
 
   private imageData: Image[];
 
+  idImage : number = 0;
+
   private RestUrl = 'https://akabab.github.io/starwars-api/api/all.json';
 
   constructor(private http: HttpClient) { }
 
   getImages(): Observable<Image>{
     return this.http.get<Image>(this.RestUrl);
+  }
+
+  selectImage(id: number): void {
+    console.log('id',id);
+    this.idImage = id;
   }
 
 }

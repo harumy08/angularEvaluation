@@ -1,0 +1,66 @@
+<mat-dialog-content>
+  <button type="button"  mat-dialog-close  mat-button>CERRAR</button>
+  <div fxLayout="row" class="row" fxLayoutAlign="center center">
+    <div class="row justify-content-md-center">
+      <h1 class="text-center">{{data.name}}</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img class="content-img"
+          [src]="data.image"
+          [alt]="data.name">
+      </div>
+    <div class="col-md-6">
+      <div class="row mb-5 mt-2 pb-2">
+        <div class="col bor">
+          <h2>Generals</h2>
+          <ul>
+            <li>Birth: {{data.born}}</li>
+            <li>Homeworld: {{data.homeworld}}</li>
+            <li>Species: {{data.species}}</li>
+            <li>Gender: {{data.gender}}</li>
+            <li>Hair Color: {{data.hairColor}}</li>
+            <li>Eye color: {{data.eyeColor}}</li>
+            <li>Height: {{data.height}} m</li>
+            <li>Weight: {{data.mass}} kg</li>
+            <li>Death: {{data.died}}</li>
+            <li>Location where he died: {{data.diedLocation}}</li>
+          </ul>
+        </div>
+        <div class="col bor">
+          <h2>Affiliations</h2>
+          <ul>
+            <li>{{data.affiliations}}</li>
+          </ul>
+        </div>
+        <div class="col bor">
+          <h2>Former Affiliations</h2>
+          <ul>
+            <li>{{data.formerAffiliations}}</li>
+          </ul>
+        </div>
+      </div>
+        <div class="row mb-5 pb-2  mt-2 ">
+        <div class="col bor">
+            <h2>Era</h2>
+            <ul>
+              <li>{{data.era}}</li>
+            </ul>
+          </div>
+          <div class="col bor">
+          <h1 class="justify-content-md-center">Masters</h1>
+          <ul>
+            <li>{{data.affiliations}}</li>
+          </ul>
+        </div>
+        <div class="col bor">
+          <h1 class="justify-content-md-center">Apprentices</h1>
+          <ul>
+            <li>{{data.formerAffiliations}}</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>

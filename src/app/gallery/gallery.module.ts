@@ -3,22 +3,24 @@ import { CommonModule } from '@angular/common';
 
 import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryComponent } from './gallery.component';
-import { ChildComponent } from './child/child.component';
+import { ImageListComponent } from './image-list/image-list.component';
 import { RenderComponent } from './render/render.component';
 
-import { LazyLoadImagesDirective } from '../directives/lazy-load-images.directive';
+import {MaterialModule} from './material.module';
+import { ImageModalComponent } from './image-modal/image-modal.component';
 
 
 @NgModule({
   declarations: [
     GalleryComponent,
-    ChildComponent,
+    ImageListComponent,
     RenderComponent,
-    LazyLoadImagesDirective
+    ImageModalComponent
   ],
   imports: [
     CommonModule,
-    GalleryRoutingModule
+    GalleryRoutingModule,
+    MaterialModule
   ]
 })
 export class GalleryModule { }

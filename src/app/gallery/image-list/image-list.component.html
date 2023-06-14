@@ -1,7 +1,9 @@
 <div class="card-columns">
   <div class="card card-hover h-100" *ngFor="let item of images">
-    <div class="card-body" (click)='cardSelected(item.id)'>
-      <img [src]="item.image" alt="image" class="card-img-top">
+    <div class="card-body" (click)="openModal(item)">
+      <img class="card-img-top"
+        [src]="item.image"
+        alt="{{item.name}}">
       <div class="reveal h-100 p-2 d-flex">
         <div class="w-100 align-self-center">
           <p>{{item.name}}</p>
