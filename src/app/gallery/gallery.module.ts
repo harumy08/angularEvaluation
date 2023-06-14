@@ -6,12 +6,13 @@ import { GalleryComponent } from './gallery.component';
 import { ImageListComponent } from './image-list/image-list.component';
 import { RenderComponent } from './render/render.component';
 
-import {MaterialModule} from './material.module';
+import { MaterialModule } from './material.module';
 import { ImageModalComponent } from './image-modal/image-modal.component';
 
 import { LazyImgDirective } from '../directives/LazyImgDirective';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UploadImageComponent } from './upload-image/upload-image.component';
   imports: [
     CommonModule,
     GalleryRoutingModule,
-    MaterialModule
+    MaterialModule,
+    NgxSpinnerModule
   ]
 })
 export class GalleryModule { }

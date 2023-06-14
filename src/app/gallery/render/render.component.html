@@ -1,3 +1,7 @@
-<div class="col-md-12">
-  <app-image-list [images]="images"></app-image-list>
-</div>
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-8bits" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+  <app-image-list [images]="images"
+  (paginaEmitter)="goToPage($event)"
+  [page]="page"
+  [totalPages]="totalPages"
+  [numImages]="numImages">
+</app-image-list>
